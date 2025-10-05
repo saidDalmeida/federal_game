@@ -1,5 +1,6 @@
 anim8 = require("libraries/anim8")
-love.graphics.setDefaultFilter("nearest", "nearest")Pers = {}
+love.graphics.setDefaultFilter("nearest", "nearest")
+Pers = {}
 
 function Pers:load()
     self.x = 145
@@ -70,5 +71,11 @@ function Pers:drAn()
             self.anims.aniPf:draw(self.spriteSheet, self.x, self.y,nil,nil,nil,16,16)
         end
     end
+    
+end
+
+function Pers:hud()
+
+
     
 end

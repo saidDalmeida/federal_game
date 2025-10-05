@@ -1,14 +1,17 @@
 require("codes/player/pers")
 require('codes/maps/mapa')
+require('codes/hud')
 camera = require('libraries.camera')
 cam = camera()
 function love.load()
     Maps:load()
     Pers:load()
+    Hud:load()
 end
 
 function love.update(dt)
     Pers:update(dt)
+    Hud:update(dt)
     cameras()
    
 end
@@ -21,6 +24,7 @@ function love.draw()
         Pers:draw()
         mapatst:drawLayer(mapatst.layers['avr2'])
     cam:detach() --[ delimita o espaço da camera, oq estiver fora n~ao sera renderizado "foi oq entendi" ]
+        Hud:draw()
         love.graphics.print(mapx,0)
         love.graphics.print(mapy,0,50)
         love.graphics.print(cam.x,0,100)
