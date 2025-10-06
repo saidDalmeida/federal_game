@@ -16,7 +16,7 @@ function Maps:draw()
         mapatst:drawLayer(mapatst.layers['terreno'])
         mapatst:drawLayer(mapatst.layers['sub1'])
         mapatst:drawLayer(mapatst.layers['avr1'])
-        mapatst:drawLayer(mapatst.layers['avr2'])
+        
    --love.graphics.pop()
     
 end

@@ -18,13 +18,8 @@ function Hud:load()
     self.armHud = {}
 
     --direcoes
-    self.arm = 1
-    self.direct_sptSH = love.graphics.newImage('arts/huds/direcoes.png')
-    self.direct_grid = anim8.newGrid(50,50,self.direct_sptSH:getWidth(),self.direct_sptSH:getHeight())
-    self.direct_Hud = {}
-    self.direct_Hud.direcoes = anim8.newAnimation(self.life_grid('1-1',1),0.1)
-    self.direct_x = float
-    self.direct_y = float
+    self.ponteiro = love.graphics.newImage('arts/huds/ponteiro.png')
+    self.ang = 0
 
 
 end
@@ -32,7 +27,6 @@ end
 
 function Hud:update(dt)
     self.lifeHud.lifes:update(dt)
-    self.direct_Hud.direcoes:update(dt)
     self.armHud.arms = anim8.newAnimation(self.arm_grid(self.arm.. '-' ..1,1),0.1)
 
     if love.keyboard.isDown('q') then
@@ -52,5 +46,33 @@ function Hud:draw()
     self.armHud.arms:draw(self.arm_sptSH,0,4*6,nil,8)
      love.graphics.print(self.vd, 0,200)
 
+    
+end
+
+
+function Hud:pont_dir()
+    if (Pers.mx == -1) or (Controls.lx < 0) then self.ang = 5.5
+    
+    elseif (Pers.mx == 1) or (Controls.lx > 0) then self.ang = -5.5 * 3
+    
+    elseif (Pers.my == -1) or (Controls.ly < 0) then self.ang = -5.5
+    
+    elseif (Pers.my == 1) or (Controls.ly > 0)then self.ang = 5.5 *3
+    
+    
+    end
+
+    if (Pers.mx == -1 and Pers.my == -1) or (Controls.lx < 0 and Controls.ly < 0 ) then self.ang = - 5.5 * 8
+    
+    elseif (Pers.mx == -1 and Pers.my == 1) or (Controls.lx < 0 and Controls.ly > 0) then self.ang = 5.5 * 2
+    
+    elseif (Pers.mx == 1 and Pers.my == -1) or (Controls.lx > 0 and Controls.ly < 0) then self.ang = -5.5  * 2
+    
+    elseif (Pers.mx == 1 and Pers.my == 1) or (Controls.lx > 0 and Controls.ly > 0)then self.ang = 5.5 * 4
+    end
+end
+
+function Hud:draw_pont()
+    love.graphics.draw(self.ponteiro,Pers.x,Pers.y,self.ang,nil,nil,21,22)
     
 end

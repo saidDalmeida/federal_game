@@ -10,6 +10,7 @@ function love.load()
 end
 
 function love.update(dt)
+    Hud:pont_dir()
     Pers:update(dt)
     Hud:update(dt)
     cameras()
@@ -23,6 +24,8 @@ function love.draw()
         Maps:draw()
         Pers:draw()
         mapatst:drawLayer(mapatst.layers['avr2'])
+        Hud:draw_pont()
+
     cam:detach() --[ delimita o espaço da camera, oq estiver fora n~ao sera renderizado "foi oq entendi" ]
         Hud:draw()
         love.graphics.print(mapx,0)
