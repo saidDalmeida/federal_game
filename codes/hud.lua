@@ -73,6 +73,6 @@ function Hud:pont_dir()
 end
 
 function Hud:draw_pont()
-    love.graphics.draw(self.ponteiro,Pers.x+0.5,Pers.y+2.6,self.ang,nil,nil,21,22)
+    love.graphics.draw(self.ponteiro,Pers.x-0.1,Pers.y+2.6,self.ang,nil,nil,21,22)
     
 end
