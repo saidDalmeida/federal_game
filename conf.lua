@@ -5,6 +5,6 @@ function love.conf(t)
     t.window.height = 600
 
    
-    t.window.fullscreen = false
+    t.window.fullscreen = true
 
 end

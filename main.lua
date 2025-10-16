@@ -1,9 +1,10 @@
+require('codes/player/controles')
 require("codes/player/pers")
-require("codes/player/controles")
 require('codes/maps/mapa')
 require('codes/hud')
 camera = require('libraries.camera')
 cam = camera()
+
 function love.load()
     Controls:load_gamepad()
     Maps:load()
@@ -14,6 +15,7 @@ end
 function love.update(dt)
     Controls:teclado(dt)
     Controls:gamepad(dt)
+    Controls:run(dt)
     Hud:pont_dir()
     Pers:update(dt)
     Hud:update(dt)
@@ -34,9 +36,8 @@ function love.draw()
         Hud:draw()
         love.graphics.print(mapx,0)
         love.graphics.print(mapy,0,50)
-        love.graphics.print(cam.x,0,100)
-        love.graphics.print(cam.y,0,150)
-
+        love.graphics.print(Pers.y,0,100)
+        Controls:prints()
    
    
 end
