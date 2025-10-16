@@ -1,0 +1,25 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "tilesetBT.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "last.imagePath": "/home/said/Área de Trabalho",
+    "map.fixedSize": false,
+    "openFiles": [
+        "tilesetBT.tsx"
+    ],
+    "project": "mapaBT_01.tiled-project",
+    "recentFiles": [
+        "tilesetBT.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx"
+}
